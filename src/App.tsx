@@ -107,6 +107,7 @@ function App() {
                   <td>{c.AGENT}</td>
                   <td>{formatDateIso(c.receivedDate)}</td>
                   <td>{c.status}</td>
+                  <td><button>edit</button><button>download</button></td>
                 </tr>
               ))}
             </tbody>
