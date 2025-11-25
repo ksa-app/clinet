@@ -1,13 +1,21 @@
 import { useEffect,useState } from 'react';
 import './App.css';
 function App() {
-  const [candidates,setCandidates] = useState([]);
+  interface Candidate{
+    _id:string;
+    sl:number;
+    fullName:string;
+    passportNumber:string;
+    status:string;
+    receivedDate?:string;
+  }
+  const [candidates,setCandidates] = useState<Candidate[]>([]);
   const [loading,setLoading] = useState(true);
 
   useEffect(()=>{
     fetch('https://core-nx6y.onrender.com/api/candidates')
       .then((res)=>res.json())
-      .then((data)=>{
+      .then((data: Candidate[])=>{
         setCandidates(data);
         setLoading(false);
       })
