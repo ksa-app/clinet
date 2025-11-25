@@ -4,7 +4,7 @@ function App() {
     <>
       <div className='app-root'>
         <div className='header'>
-          <div className='title'>Candidate manager</div>
+          <div className='title'>RUNWAY OVERSEAS</div>
           <div>
            {/* <button className='add-btn'>kanvan</button> */}
             <button className='add-btn'>Add Candidate</button>
