@@ -1,5 +1,23 @@
+import { useEffect,useState } from 'react';
 import './App.css';
 function App() {
+  const [candidates,setCandidates] = useState([]);
+  const [loading,setLoading] = useState(true);
+
+  useEffect(()=>{
+    fetch('https://core-nx6y.onrender.com/api/candidates')
+      .then((res)=>res.json())
+      .then((data)=>{
+        setCandidates(data);
+        setLoading(false);
+      })
+      .catch((err)=>{
+        console.error("api error",err);
+        setLoading(false);
+      });
+      
+  },[]);
+  if(loading) return <h2>loading</h2>
   return (
     <>
       <div className='app-root'>
@@ -62,15 +80,15 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>RIAJUL ISLAM</td>
-                <td>A123456</td>
-                <td>RAHMAN</td>
-                <td>01-10-2025</td>
-                <td>JUST RECIVED</td>
-                <td>EDIT</td>
-              </tr>
+              {candidates.map((c)=>(
+                <tr key={c._id}>
+                  <td>{c.sl}</td>
+                  <td>{c.fullName}</td>
+                  <td>{c.passportNumber}</td>
+                  <td></td>
+                  <td>{c.receivedDate}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
