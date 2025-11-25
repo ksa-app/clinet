@@ -107,7 +107,11 @@ function App() {
                   <td>{c.AGENT}</td>
                   <td>{formatDateIso(c.receivedDate)}</td>
                   <td>{c.status}</td>
-                  <td><button>edit</button><button>download</button></td>
+                  <td><button>edit</button><a href={"https://drive.google.com/file/d/1FvcdOEgIUcVjAIdFfP7N0pWwkRQGq29a/view?usp=drive_link"} download target="_blank" rel="noopener noreferrer">
+      <button type="button">
+        Download File
+      </button>
+    </a></td>
                 </tr>
               ))}
             </tbody>
