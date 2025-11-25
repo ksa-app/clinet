@@ -13,27 +13,27 @@ function App() {
         <div className='dashbord'>
           <div className='dash-card'>
             <div className='dash-value'>10</div>
-            <div className='dash-label'>total</div>
+            <div className='dash-label'>TOTAL</div>
           </div>
           <div className='dash-card'>
             <div className='dash-value'>10</div>
-            <div className='dash-label'>total</div>
+            <div className='dash-label'>MEIDCAL</div>
           </div>
           <div className='dash-card'>
             <div className='dash-value'>10</div>
-            <div className='dash-label'>total</div>
+            <div className='dash-label'>VISA</div>
           </div>
           <div className='dash-card'>
             <div className='dash-value'>10</div>
-            <div className='dash-label'>total</div>
+            <div className='dash-label'>FLIGHT</div>
           </div>
           <div className='dash-card'>
             <div className='dash-value'>10</div>
-            <div className='dash-label'>total</div>
+            <div className='dash-label'>FLIGHT</div>
           </div>
           <div className='dash-card'>
             <div className='dash-value'>10</div>
-            <div className='dash-label'>total</div>
+            <div className='dash-label'>CANCEL</div>
           </div>
         </div>
         <div className='controls'>
