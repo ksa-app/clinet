@@ -26,6 +26,16 @@ function App() {
       
   },[]);
   if(loading) return <h2>loading</h2>
+  function formatDateIso(dateStr?: string | null){
+    if(!dateStr) return "N/A";
+    const d = new Date(dateStr);
+    if(isNaN(d.getTime())) return "N/A";
+    
+    const day = String(d.getUTCDate()).padStart(2,"0");
+    const month = String(d.getUTCMonth()+1).padStart(2,"0");
+    const year = d.getUTCFullYear();
+    return `${day}-${month}-${year}`;
+  }
   return (
     <>
       <div className='app-root'>
@@ -38,7 +48,7 @@ function App() {
         </div>
         <div className='dashbord'>
           <div className='dash-card'>
-            <div className='dash-value'>10</div>
+            <div className='dash-value'>{candidates.length}</div>
             <div className='dash-label'>TOTAL</div>
           </div>
           <div className='dash-card'>
@@ -94,7 +104,8 @@ function App() {
                   <td>{c.fullName}</td>
                   <td>{c.passportNumber}</td>
                   <td></td>
-                  <td>{c.receivedDate}</td>
+                  <td>{formatDateIso(c.receivedDate)}</td>
+                  <td>{c.status}</td>
                 </tr>
               ))}
             </tbody>
