@@ -6,6 +6,7 @@ function App() {
     sl:number;
     fullName:string;
     passportNumber:string;
+    AGENT:string;
     status:string;
     receivedDate?:string;
   }
@@ -103,7 +104,7 @@ function App() {
                   <td>{c.sl}</td>
                   <td>{c.fullName}</td>
                   <td>{c.passportNumber}</td>
-                  <td></td>
+                  <td>{c.AGENT}</td>
                   <td>{formatDateIso(c.receivedDate)}</td>
                   <td>{c.status}</td>
                 </tr>
