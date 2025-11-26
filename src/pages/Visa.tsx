@@ -140,30 +140,18 @@ function VisaPage() {
                     </thead>
 
                     <tbody>
-                        {visaList.map((v) => (
-                            <tr key={v._id}>
-                                <td style={{ border: "1px solid #ddd", padding: "10px" }}>
-                                    {v.candidate?.name}
-                                </td>
-
-                                <td style={{ border: "1px solid #ddd", padding: "10px" }}>
-                                    {v.candidate?.passportNumber}
-                                </td>
-
-                                <td style={{ border: "1px solid #ddd", padding: "10px" }}>
-                                    {v.issueDate?.slice(0, 10)}
-                                </td>
-
-                                <td style={{ border: "1px solid #ddd", padding: "10px" }}>
-                                    {v.expiryDate?.slice(0, 10)}
-                                </td>
-
-                                <td style={{ border: "1px solid #ddd", padding: "10px" }}>
-                                    {v.status}
-                                </td>
+                        {candidates.map((c) => (
+                            <tr key={c._id}>
+                            <td></td>
+                            <td>{c.fullName}</td>
+                            <td>{c.passportNumber}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>—</td>
                             </tr>
                         ))}
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
 
