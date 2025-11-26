@@ -10,7 +10,7 @@ interface Visa {
     _id?: string;
     candidate: {
         _id: string;
-        name: string;
+        fullName: string;
         passportNumber: string;
     };
     issueDate: string;
@@ -138,20 +138,32 @@ function VisaPage() {
                             <th style={{ border: "1px solid #ddd", padding: "10px" }}>Status</th>
                         </tr>
                     </thead>
-
                     <tbody>
-                        {candidates.map((c) => (
-                            <tr key={c._id}>
-                            <td></td>
-                            <td>{c.fullName}</td>
-                            <td>{c.passportNumber}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>—</td>
-                            </tr>
-                        ))}
-                        </tbody>
+                        {visaList.map((v) => (
+                        <tr key={v._id}>
+                            <td style={{ border: "1px solid #ddd", padding: "10px" }}>
+                                {v.candidate?.fullName}
+                            </td>
+
+                            <td style={{ border: "1px solid " +
+                            "#ddd", padding: "10px" }}>
+                                {v.candidate?.passportNumber}
+                            </td>
+
+                            <td style={{ border: "1px solid #ddd", padding: "10px" }}>
+                                {v.issueDate ? new Date(v.issueDate).toLocaleDateString() : "—"}
+                            </td>
+
+                            <td style={{ border: "1px solid #ddd", padding: "10px" }}>
+                                {v.expiryDate ? new Date(v.expiryDate).toLocaleDateString() : "—"}
+                            </td>
+
+                            <td style={{ border: "1px solid #ddd", padding: "10px" }}>
+                                {v.status}
+                            </td>
+                        </tr>
+                         ))}
+                    </tbody>
                 </table>
             </div>
 
