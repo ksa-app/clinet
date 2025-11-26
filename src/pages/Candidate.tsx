@@ -37,6 +37,8 @@ function Candidate() {
     const year = d.getUTCFullYear();
     return `${day}-${month}-${year}`;
   }
+  const totalVisaIssued = candidates.filter(c => c.status === "VISA ISSUED").length;
+
   return (
     <>
       <div className='app-root'>
@@ -57,7 +59,7 @@ function Candidate() {
             <div className='dash-label'>MEIDCAL</div>
           </div>
           <div className='dash-card'>
-            <div className='dash-value'>10</div>
+            <div className='dash-value'>{totalVisaIssued}</div>
             <div className='dash-label'>VISA</div>
           </div>
           <div className='dash-card'>
